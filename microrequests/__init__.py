@@ -1,7 +1,7 @@
 import requests
 from requests.packages.urllib3.util import Retry
 
-__version__ = "0.1.1"
+__version__ = "0.1.2"
 
 def __session__(max_retries, pool_connections, pool_maxsize):
     session = requests.Session()

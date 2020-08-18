@@ -9,7 +9,7 @@ the same connection instead of creating one with every new request,
 while still working with requests’ clean APIs and mechanism.
 
 This is first version of microrequests and we intend to add more
-customisation for to consume microservices easily and efficiently.
+nifty ways to make consuming microservices easy and efficient.
 
 Installation
 ------------
@@ -31,12 +31,12 @@ To use, simply do:
    import microrequests
 
    mr = microrequests.init()
-   res = mr.get("http://httpbin.org") # mr is requests' session object and you can use it in similar manner
+   res = mr.get("http://httpbin.org/get") # mr is requests' session object and you can use it in similar manner
    print(res.text)
 
-you can also customize max_retries, pool_connections and pool_maxsize -
-they are by default set to 1, 100 and 50 respectively pool_connections
-is the number of urllib3 connection pools to cache and poolmaxsize\* is
+You can also customize max_retries, pool_connections and pool_maxsize -
+they are by default set to 1, 100 and 50 respectively; pool_connections
+is the number of urllib3 connection pools to cache and poolmaxsize is
 the maximum number of connections to save in the pool
 
 .. code:: python
@@ -44,7 +44,7 @@ the maximum number of connections to save in the pool
    import microrequests
 
    mr = microrequests.init(max_retries=2, pool_connections=10, pool_size=5)
-   res = mr.get("http://httpbin.org")
+   res = mr.get("http://httpbin.org/get")
    print(res.text)
 
 Tests
